@@ -1,6 +1,6 @@
 <?php
 $origin = $_GET['origin'] ?? 'default';
-$allowedOrigins = ['site1', 'site2'];
+$allowedOrigins = ['photo', 'site2'];
 if (!in_array($origin, $allowedOrigins)) {
     $origin = 'default';
 }
