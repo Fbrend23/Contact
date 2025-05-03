@@ -5,19 +5,22 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
-  padding: 0;
+  padding: 5px;
   overflow-y: hidden;
 }
-body > a{
-    align-self: flex-start;
-    margin: 7px auto auto 1.5rem;
+
+body > a {
+  align-self: flex-start;
+  margin: 20px auto;
 }
-.logo{
-    height: 50px;
+
+.logo {
+  height: 50px;
 }
+
 h1 {
   text-align: center;
 }
@@ -26,26 +29,26 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 30%;
+  min-width: 50dvw;
   max-width: 800px;
   margin: 0;
   background: #12172b5b;
   padding: 1.5rem;
   border-radius: 8px;
   border: solid #12172b60 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 input,
-textarea
-{
-    width: 90%;
-    margin: 0.2rem auto 1rem;
-    background-color: #F4F3F2;
+textarea {
+  width: 80%;
+  margin: 0.2rem auto 1rem;
+  background-color: #f4f3f2;
 }
 label {
-    margin-bottom: 0;
-    width: 90%;
-    margin: 1rem auto 0.2rem;
+  margin-bottom: 0;
+  width: 80%;
+  margin: 1rem auto 0.2rem;
 }
 input {
   height: 30px;
@@ -60,7 +63,16 @@ button[type="submit"] {
   font-size: 1.25rem;
   margin: 10px auto;
 }
+footer{
+    height: 10px;
+    margin: auto;
+    align-self:flex-end;
+}
 
+p{
+    font-size: 0.5rem;
+    opacity: 0.5;
+}
 .confirmation {
   background-color: #d4edda;
   color: #155724;
@@ -83,45 +95,6 @@ button[type="submit"] {
   max-width: 90%;
 }
 
-/******************** Mobile ********************/
-
-@media screen and (max-width: 768px) {
-    body {
-      padding: 1rem;
-    }
-  
-    form {
-      width: 95%;
-      max-width: 500px;
-      background-color: #1c1f2e00;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-  
-    input,
-    textarea,
-    label {
-      font-size: 1rem;
-    }
-  
-    input {
-      height: 40px;
-    }
-  
-    textarea {
-      height: 120px;
-    }
-  
-    button[type="submit"] {
-      width: 100%;
-      padding: 12px;
-      font-size: 1.2rem;
-      margin-top: 1rem;
-    }
-  }
-  
-
 /******************** Thèmes selon le site d'origin ********************/
 
 /****** Site photo *******/
@@ -139,4 +112,58 @@ body.theme-photo:before {
   color: #f4f3f2;
   opacity: 0.8;
   z-index: -1;
+}
+
+body.theme-photo .logo {
+  display: block;
+  height: 50px;
+}
+
+body.theme-photo > a {
+  align-self: flex-start;
+  margin: 7px auto auto 1.5rem;
+}
+
+/******************** Mobile ********************/
+
+@media screen and (max-width: 1024px) {
+  body {
+    padding: 0 1rem;
+    overflow: auto;
+  }
+
+h1{
+    margin: 10px auto;
+}
+  form {
+    width: 95%;
+    max-width: 500px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  input,
+  textarea,
+  label {
+    font-size: 1rem;
+  }
+
+  input {
+    height: 40px;
+  }
+
+  textarea {
+    height: 120px;
+  }
+
+  button[type="submit"] {
+    width: 90%;
+    padding: 12px;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  body.theme-photo > a {
+    margin: 8px auto auto -1px;
+  }
 }

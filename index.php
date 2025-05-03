@@ -67,7 +67,7 @@ $returnUrl = $redirectUrls[$origin];
         <div class="g-recaptcha" data-sitekey="6LfyrCkrAAAAAPOI-RRG2m-3oEe8AriV9YYMjFfa"></div>
         <button type="submit">Envoyer</button>
     </form>
-
+<footer><p>© 2025 Brendan Fleurdelys</p></footer>
 </body>
 
 </html>
