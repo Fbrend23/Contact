@@ -1,26 +1,39 @@
 <?php
 $origin = $_GET['origin'] ?? 'default';
-$allowedOrigins = ['photo', 'site2'];
+$allowedOrigins = ['photo',];
 if (!in_array($origin, $allowedOrigins)) {
     $origin = 'default';
 }
+$redirectUrls = [
+    'photo' => 'https://photographie.brendanfleurdelys.ch',
+    'default' => 'https://brendanfleurdelys.ch'
+];
+
+$returnUrl = $redirectUrls[$origin];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - <?= htmlspecialchars($origin) ?></title>
+    <meta name="description" content="Formulaire de contact">
+    <meta name="author" content="Brendan Fleurdelys">
+    <link rel="icon" href="assets/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 
 <body class="theme-<?= $origin ?>">
+    <a href="<?= $returnUrl ?>"><img src="assets/logo.png" alt="logo" class="logo"></a>
     <form method="POST" action="php/send.php">
-    <h1>Formulaire de contact</h1>
+        <h1>Formulaire de contact</h1>
         <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
             <div class="confirmation">
-                ✅ Votre message a bien été envoyé. Merci !
+                <p>✅ Votre message a bien été envoyé. Merci !</p>
+                <a href="<?= $returnUrl ?>">Retour au site</a>
             </div>
         <?php endif; ?>
         <?php if (isset($_GET['error'])): ?>
@@ -31,10 +44,10 @@ if (!in_array($origin, $allowedOrigins)) {
                         echo "❌ Veuillez remplir tous les champs du formulaire.";
                         break;
                     case 'recaptcha_failed':
-                        echo "❌ Échec de la vérification reCAPTCHA. Merci de réessayer.";
+                        echo "❌ Échec de la vérification reCAPTCHA.<br> Merci de réessayer.";
                         break;
                     default:
-                        echo "❌ Une erreur est survenue. Merci de réessayer.";
+                        echo "❌ Une erreur est survenue.<br> Merci de réessayer.";
                 }
                 ?>
             </div>
