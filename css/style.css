@@ -1,56 +1,142 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 2rem;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  background-color: #0b0e1a;
+  color: white;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
 }
-
-body.theme-site1 {
-    background-color: #e0f7fa;
+body > a{
+    align-self: flex-start;
+    margin: 7px auto auto 1.5rem;
 }
-
-body.theme-site2 {
-    background-color: #fff3e0;
+.logo{
+    height: 50px;
 }
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 30%;
+  max-width: 800px;
+  margin: 0;
+  background: #12172b5b;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: solid #12172b60 1px;
 }
 
-input, textarea, label {
-    width: 60%;
-    margin: 0.5rem auto 1rem;
+input,
+textarea
+{
+    width: 90%;
+    margin: 0.2rem auto 1rem;
+    background-color: #F4F3F2;
+}
+label {
+    margin-bottom: 0;
+    width: 90%;
+    margin: 1rem auto 0.2rem;
+}
+input {
+  height: 30px;
 }
 
-input{
-    height: 30px;
+textarea {
+  height: 100px;
 }
 
-textarea{
-    height: 100px;
-}
-
-button[type=submit]{
-    height: 40px;
-    width: 100px;
-    margin: 10px auto;
+button[type="submit"] {
+  padding: 10px 24px;
+  font-size: 1.25rem;
+  margin: 10px auto;
 }
 
 .confirmation {
-    background-color: #d4edda;
-    color: #155724;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #c3e6cb;
-    border-radius: 5px;
+  background-color: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 90%;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 90%;
+}
+
+/******************** Mobile ********************/
+
+@media screen and (max-width: 768px) {
+    body {
+      padding: 1rem;
+    }
+  
+    form {
+      width: 95%;
+      max-width: 500px;
+      background-color: #1c1f2e00;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+  
+    input,
+    textarea,
+    label {
+      font-size: 1rem;
+    }
+  
+    input {
+      height: 40px;
+    }
+  
+    textarea {
+      height: 120px;
+    }
+  
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+  }
+  
+
+/******************** Thèmes selon le site d'origin ********************/
+
+/****** Site photo *******/
+body.theme-photo:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/assets/themes/DSC01060.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #f4f3f2;
+  opacity: 0.8;
+  z-index: -1;
 }
