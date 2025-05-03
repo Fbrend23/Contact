@@ -15,14 +15,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sujet  = htmlspecialchars(trim($_POST['sujet'] ?? ''));
     $origin  = htmlspecialchars($_POST['origin'] ?? 'inconnu');
     $recaptchaToken = $_POST['g-recaptcha-response'] ?? '';
+    $query = http_build_query([
+        'origin' => $origin,
+        'error' => 'missing_fields',
+        'name' => $name,
+        'email' => $email,
+        'sujet' => $sujet,
+        'message' => $message,
+    ]);
 
-    if (!$name || !$email || !$sujet || !$message || !$recaptchaToken) {
-        die('Tous les champs sont requis.');
-    }    
-
-    if (!verifyRecaptcha($recaptchaToken)) {
-        die('Échec du reCAPTCHA. Veuillez réessayer.');
+    if (!$name || !$email || !$sujet || !$message) {
+        $query = http_build_query([
+            'origin' => $origin,
+            'error' => 'missing_fields',
+            'name' => $name,
+            'email' => $email,
+            'sujet' => $sujet,
+            'message' => $message,
+        ]);
+        header("Location: ../index.php?$query");
+        exit;
     }
+    
+    if (!$recaptchaToken || !verifyRecaptcha($recaptchaToken)) {
+        $query = http_build_query([
+            'origin' => $origin,
+            'error' => 'recaptcha_failed',
+            'name' => $name,
+            'email' => $email,
+            'sujet' => $sujet,
+            'message' => $message,
+        ]);
+        header("Location: ../index.php?$query");
+        exit;
+    }
+    
 
     $mail = new PHPMailer(true);
 
