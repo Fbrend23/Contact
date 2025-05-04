@@ -14,7 +14,7 @@ body {
 
 body > a {
   align-self: flex-start;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 .logo {
@@ -54,8 +54,15 @@ input {
   height: 30px;
 }
 
+
 textarea {
   height: 100px;
+}
+
+select{
+  height: 40px;
+  text-align: center;
+  font-size: 1rem;
 }
 
 button[type="submit"] {
@@ -73,6 +80,8 @@ p{
     font-size: 0.5rem;
     opacity: 0.5;
 }
+
+
 .confirmation {
   background-color: #d4edda;
   color: #155724;
@@ -144,7 +153,7 @@ h1{
 
   input,
   textarea,
-  label {
+  label,select {
     font-size: 1rem;
   }
 
@@ -166,4 +175,10 @@ h1{
   body.theme-photo > a {
     margin: 8px auto 5px -1px;
   }
+
+select{
+  height: 40px;
+  width: 80%;
+  text-align: center;
+}
 }

@@ -1,12 +1,13 @@
 <?php
 $origin = $_GET['origin'] ?? 'default';
-$allowedOrigins = ['photo',];
+$allowedOrigins = ['photo','beer'];
 if (!in_array($origin, $allowedOrigins)) {
     $origin = 'default';
 }
 $redirectUrls = [
+    'default' => 'https://brendanfleurdelys.ch',
     'photo' => 'https://photographie.brendanfleurdelys.ch',
-    'default' => 'https://brendanfleurdelys.ch'
+    'beer' => 'https://horaire.brendanfleurdelys.ch/'
 ];
 
 $returnUrl = $redirectUrls[$origin];
@@ -52,14 +53,18 @@ $returnUrl = $redirectUrls[$origin];
                 ?>
             </div>
         <?php endif; ?>
+        <select name="sujet" id="sujet" required>
+            <option value="" disabled selected>-- Choisissez un sujet --</option>
+            <option value="Demande générale">Demande générale</option>
+            <option value="Problème technique">Problème technique</option>
+            <option value="Proposition de collaboration">Proposition de collaboration</option>
+            <option value="Autre">Autre</option>
+        </select>
         <label for="name">Nom :</label>
         <input type="text" id="name" name="name" required value="<?= htmlspecialchars($_GET['name'] ?? '') ?>">
 
         <label for="email">Email :</label>
         <input type="email" id="email" name="email" required value="<?= htmlspecialchars($_GET['email'] ?? '') ?>">
-
-        <label for="sujet">Sujet :</label>
-        <input type="text" id="sujet" name="sujet" required value="<?= htmlspecialchars($_GET['sujet'] ?? '') ?>">
 
         <label for="message">Message :</label>
         <textarea id="message" name="message" required value="<?= htmlspecialchars($_GET['message'] ?? '') ?>"></textarea>
