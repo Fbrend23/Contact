@@ -54,12 +54,11 @@ input {
   height: 30px;
 }
 
-
 textarea {
   height: 100px;
 }
 
-select{
+select {
   height: 40px;
   font-size: 1rem;
   margin: auto;
@@ -70,17 +69,16 @@ button[type="submit"] {
   font-size: 1.25rem;
   margin: 10px auto;
 }
-footer{
-    height: 10px;
-    margin: auto;
-    align-self:flex-end;
+footer {
+  height: 10px;
+  margin: auto;
+  align-self: flex-end;
 }
 
-p{
-    font-size: 0.5rem;
-    opacity: 0.5;
+p {
+  font-size: 0.5rem;
+  opacity: 0.5;
 }
-
 
 .confirmation {
   background-color: #d4edda;
@@ -141,9 +139,9 @@ body.theme-photo > a {
     overflow: auto;
   }
 
-h1{
+  h1 {
     margin: 10px auto;
-}
+  }
   form {
     width: 95%;
     max-width: 500px;
@@ -153,7 +151,8 @@ h1{
 
   input,
   textarea,
-  label,select {
+  label,
+  select {
     font-size: 1rem;
   }
 
@@ -176,8 +175,19 @@ h1{
     margin: 8px auto 5px -1px;
   }
 
-select{
-  height: 40px;
-  width: 80%;
+  select {
+    height: 40px;
+    width: 80%;
+  }
 }
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
