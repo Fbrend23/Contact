@@ -15,6 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sujet  = htmlspecialchars(trim($_POST['sujet'] ?? ''));
     $origin  = htmlspecialchars($_POST['origin'] ?? 'inconnu');
     $recaptchaToken = $_POST['g-recaptcha-response'] ?? '';
+    
+    // Honeypot check
+    if (!empty($_POST['hp_field'])) {
+        // Silent exit or redirect to home to fool bots
+        exit;
+    }
+
     $query = http_build_query([
         'origin' => $origin,
         'error' => 'missing_fields',

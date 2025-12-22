@@ -54,12 +54,11 @@ input {
   height: 30px;
 }
 
-
 textarea {
   height: 100px;
 }
 
-select{
+select {
   height: 40px;
   font-size: 1rem;
   margin: auto;
@@ -70,17 +69,16 @@ button[type="submit"] {
   font-size: 1.25rem;
   margin: 10px auto;
 }
-footer{
-    height: 10px;
-    margin: auto;
-    align-self:flex-end;
+footer {
+  height: 10px;
+  margin: auto;
+  align-self: flex-end;
 }
 
-p{
-    font-size: 0.5rem;
-    opacity: 0.5;
+p {
+  font-size: 0.5rem;
+  opacity: 0.5;
 }
-
 
 .confirmation {
   background-color: #d4edda;
@@ -114,7 +112,7 @@ body.theme-photo:before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("/assets/themes/DSC01060.jpg");
+  background-image: url("../assets/themes/DSC01060.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -133,6 +131,27 @@ body.theme-photo > a {
   margin: 7px auto auto 1.5rem;
 }
 
+/****** Site Portail (Default) *******/
+body.theme-default {
+  background: radial-gradient(circle at center, #0c1e2c, #010a14);
+  background-size: cover;
+  background-attachment: fixed;
+}
+body.theme-default:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/themes/nebuleuse.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: -1;
+  pointer-events: none;
+}
+
 /******************** Mobile ********************/
 
 @media screen and (max-width: 1024px) {
@@ -141,9 +160,9 @@ body.theme-photo > a {
     overflow: auto;
   }
 
-h1{
+  h1 {
     margin: 10px auto;
-}
+  }
   form {
     width: 95%;
     max-width: 500px;
@@ -153,7 +172,8 @@ h1{
 
   input,
   textarea,
-  label,select {
+  label,
+  select {
     font-size: 1rem;
   }
 
@@ -176,8 +196,19 @@ h1{
     margin: 8px auto 5px -1px;
   }
 
-select{
-  height: 40px;
-  width: 80%;
+  select {
+    height: 40px;
+    width: 80%;
+  }
 }
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

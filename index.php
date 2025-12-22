@@ -70,6 +70,7 @@ $returnUrl = $redirectUrls[$origin];
         <label for="message">Message :</label>
         <textarea id="message" name="message" required value="<?= htmlspecialchars($_GET['message'] ?? '') ?>"></textarea>
         <input type="hidden" name="origin" value="<?= htmlspecialchars($origin) ?>">
+        <input type="text" name="hp_field" class="visually-hidden" tabindex="-1" autocomplete="off">
         <div class="g-recaptcha" data-sitekey="6LfyrCkrAAAAAPOI-RRG2m-3oEe8AriV9YYMjFfa"></div>
         <button type="submit">Envoyer</button>
     </form>
