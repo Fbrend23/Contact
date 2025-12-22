@@ -112,7 +112,7 @@ body.theme-photo:before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("/assets/themes/DSC01060.jpg");
+  background-image: url("../assets/themes/DSC01060.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -129,6 +129,27 @@ body.theme-photo .logo {
 body.theme-photo > a {
   align-self: flex-start;
   margin: 7px auto auto 1.5rem;
+}
+
+/****** Site Portail (Default) *******/
+body.theme-default {
+  background: radial-gradient(circle at center, #0c1e2c, #010a14);
+  background-size: cover;
+  background-attachment: fixed;
+}
+body.theme-default:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/themes/nebuleuse.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: -1;
+  pointer-events: none;
 }
 
 /******************** Mobile ********************/
