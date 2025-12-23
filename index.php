@@ -9,7 +9,7 @@ $redirectUrls = [
     'photo' => 'https://photographie.brendanfleurdelys.ch',
     'beer' => 'https://horaire.brendanfleurdelys.ch/',
     'meow' => 'https://meow.brendanfleurdelys.ch',
-    'tanuki' => 'https://tanukicode.brendanfleurdelys.ch' 
+    'tanuki' => 'https://tanukicode.brendanfleurdelys.ch'
 ];
 
 $returnUrl = $redirectUrls[$origin];
@@ -25,6 +25,7 @@ $returnUrl = $redirectUrls[$origin];
     <meta name="author" content="Brendan Fleurdelys">
     <link rel="icon" href="assets/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; connect-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src 'self' https://www.google.com/recaptcha/ https://recaptcha.google.com/; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
