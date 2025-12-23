@@ -13,11 +13,12 @@ Validation serveur, reCAPTCHA, honeypot et envoi sécurisé via SMTP.
 ---
 
 ## 🚀 Fonctionnalités
+
 - **Multi-site** : un même backend pour plusieurs frontaux.
 - **Envoi d’e-mails** via PHPMailer (SMTP).
 - **Anti-spam** : reCAPTCHA v2/v3 + champ honeypot.
 - **Validation serveur** complète.
-- **Réponses JSON** faciles à consommer côté front.
+- **Redirections** avec gestion d'erreurs et persistance des champs.
 - **Variables d’environnement** pour toutes les clés sensibles.
 
 ---
