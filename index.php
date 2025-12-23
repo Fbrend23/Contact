@@ -1,6 +1,6 @@
 <?php
 $origin = $_GET['origin'] ?? 'default';
-$allowedOrigins = ['photo','beer','meow'];
+$allowedOrigins = ['photo','beer','meow','tanuki'];
 if (!in_array($origin, $allowedOrigins)) {
     $origin = 'default';
 }
@@ -8,7 +8,8 @@ $redirectUrls = [
     'default' => 'https://brendanfleurdelys.ch',
     'photo' => 'https://photographie.brendanfleurdelys.ch',
     'beer' => 'https://horaire.brendanfleurdelys.ch/',
-    'meow' => 'https://meow.brendanfleurdelys.ch'
+    'meow' => 'https://meow.brendanfleurdelys.ch',
+    'tanuki' => 'https://tanukicode.brendanfleurdelys.ch' 
 ];
 
 $returnUrl = $redirectUrls[$origin];
