@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $mail->send();
         header("Location: ../index.php?origin=" . urlencode($origin) . "&success=1");
-        exit;        
+        exit;
     } catch (Exception $e) {
         // Log l'erreur technique serveur
         error_log("Erreur SMTP : " . $mail->ErrorInfo);

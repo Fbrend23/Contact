@@ -73,7 +73,7 @@ $returnUrl = $redirectUrls[$origin];
         <textarea id="message" name="message" required value="<?= htmlspecialchars($_GET['message'] ?? '') ?>"></textarea>
         <input type="hidden" name="origin" value="<?= htmlspecialchars($origin) ?>">
         <input type="text" name="hp_field" class="visually-hidden" tabindex="-1" autocomplete="off">
-        <div class="g-recaptcha" data-sitekey="6LfyrCkrAAAAAPOI-RRG2m-3oEe8AriV9YYMjFfa"></div>
+        <div class="g-recaptcha" data-sitekey="6Le3FjUsAAAAANwsOeKx1_fwzYwYod1L0rZAyf_o"></div>
         <button type="submit">Envoyer</button>
     </form>
 <footer><p>© 2025 Brendan Fleurdelys</p></footer>
