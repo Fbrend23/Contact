@@ -81,7 +81,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: ../index.php?origin=" . urlencode($origin) . "&success=1");
         exit;        
     } catch (Exception $e) {
-        echo "Erreur lors de l'envoi du mail : {$mail->ErrorInfo}";
+        // Log l'erreur technique serveur
+        error_log("Erreur SMTP : " . $mail->ErrorInfo);
+
+        // Redirection avec erreur générique pour l'utilisateur
+        $query = http_build_query([
+            'origin' => $origin,
+            'error' => 'smtp_error', // Erreur générique
+            'name' => $name,
+            'email' => $email,
+            'sujet' => $sujet,
+            'message' => $message,
+        ]);
+        header("Location: ../index.php?$query");
+        exit;
     }
 } else {
     http_response_code(405);
