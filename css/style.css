@@ -152,6 +152,57 @@ body.theme-default:before {
   pointer-events: none;
 }
 
+/****** Site TanukiCode *******/
+body.theme-tanuki {
+  background-color: #f7f3e8; /* tanuki-beige */
+  color: #4a3e36; /* tanuki-brown-dark */
+}
+
+body.theme-tanuki:before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/themes/tanuki-mascot.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body.theme-tanuki form {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #7cb342; /* tanuki-green */
+  color: #3e2723;
+}
+
+body.theme-tanuki input,
+body.theme-tanuki textarea,
+body.theme-tanuki select {
+  background-color: #ffffff;
+  border: 1px solid #7cb342;
+  color: #3e2723;
+}
+
+body.theme-tanuki button[type="submit"] {
+  background-color: #7cb342; /* tanuki-green */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+body.theme-tanuki button[type="submit"]:hover {
+  background-color: #558b2f;
+}
+
 /******************** Mobile ********************/
 
 @media screen and (max-width: 1024px) {
